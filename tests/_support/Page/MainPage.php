@@ -52,7 +52,7 @@ class MainPage
 
     public static $prevButton = '//*[@class="prev"]';
     public static $nextButton = '//*[@class="next"]';
-    public static $readMoreLink = '//*[@id="update-slider"]//div[5]/div/p[2]/a';
+    public static $readMoreLink = './/*[@id=\'update-slider\']/div[1]/div/div[7]/div/p[2]/a';
 
     protected $tester;
 
@@ -161,14 +161,14 @@ class MainPage
 
     public function whatsNewBlock(){
         $I = $this->tester;
-        $I->amOnPage(self::$URL);
+      //  $I->amOnPage(self::$URL);
         $I->scrollTo(self::$prevButton);
         $I->click(self::$prevButton);
         $I->click(self::$prevButton);
         $I->click(self::$prevButton);
         $I->click(self::$nextButton);
         $I->click(self::$nextButton);
-        $I->click(self::$nextButton);
+        $I->waitForElementVisible(self::$readMoreLink);
         $I->click(self::$readMoreLink);
         $I->waitForElement(self::$h3def);
 
@@ -187,7 +187,6 @@ class MainPage
 
     public function ourStrengthsBlock(){
         $I = $this->tester;
-        $I->amOnPage(self::$URL);
         $I->scrollTo(self::$ourStrengthBlock);
         $I->click(self::$devopsStrength);
         $I->waitForElement(self::$h3);
@@ -216,6 +215,7 @@ class MainPage
         $I->click(self::$itCloudStrength);
         $I->waitForElement(self::$h3);
         $I->see('IT Cloud Staffing',self::$h3);
+        $I->click(self::$logo);
     }
 
 // Slider Block
@@ -237,7 +237,7 @@ class MainPage
         $I->waitForElement(self::$h3);
         $I->see('Big Data & Data Science', self::$h3);
         $I->click(self::$logo);
-        $I->waitForElementVisible(self::$DataScienceLearnMore);
+        $I->waitForElementVisible(self::$nextOurPartnersSliderButton);
     }
 
 //Who we are slider
