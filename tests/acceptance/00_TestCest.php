@@ -16,7 +16,8 @@ class TestCest
     }
 */
 
-/**/
+/*
+   */
     function T1HeaderLinks( \Page\MainPage $mainPage){
         $mainPage->headerLinks();  }
 
@@ -24,7 +25,7 @@ class TestCest
         $mainPage->footerLinks();
         $mainPage->socialFooterLinks();    }
 
-    function T3MainPageTests( \Page\MainPage $mainPage){
+    function T3MainPage( \Page\MainPage $mainPage){
         $mainPage->whoWeAreSlider();
         $mainPage->sliderBlock();
         $mainPage->ourPartnersSlider();
@@ -39,13 +40,13 @@ class TestCest
         $aboutUsPage->aboutUsInstagramBlock(); }
 
     function T6ContactsPageInvalidDataLeaveAMessageBlock( \Page\ContactsPage $contactsPage) {
-        $contactsPage->invalidLeaveAMessageData('INVALID'); }
-
-
-    function T7ContactsPageValidDataLeaveAMessageBlock( \Page\ContactsPage $contactsPage) {
+        $contactsPage->invalidLeaveAMessageData('INVALID');
         $contactsPage->validLeaveAMessageData('Test','test@test.com','test message'); }
 
-    /**/
+    function T7DevOpsPage( \Page\DevOpsPage $devOpsPage) {
+        $devOpsPage->devOpsFeatures(); }
+
+
 
 
 

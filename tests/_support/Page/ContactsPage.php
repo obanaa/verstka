@@ -53,7 +53,7 @@ class ContactsPage
 
     public function validLeaveAMessageData ($name,$email,$message){
         $I = $this->tester;
-        $I->amOnPage(self::$URL);
+       // $I->amOnPage(self::$URL);
         $I->scrollTo(self::$sendButton);
         $I->fillField(self::$nameField,$name);
         $I->fillField(self::$emailField,$email);

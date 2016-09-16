@@ -52,7 +52,7 @@ class MainPage
 
     public static $prevButton = '//*[@class="prev"]';
     public static $nextButton = '//*[@class="next"]';
-    public static $readMoreLink = './/*[@id=\'update-slider\']/div[1]/div/div[7]/div/p[2]/a';
+    public static $readMoreLink = './/*[@id="update-slider"]/div[1]/div/div[7]/div/p[2]/a';
 
     protected $tester;
 
