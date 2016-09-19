@@ -19,6 +19,7 @@ class MainPage
     public static $partnersHeader = '//nav[1]//a[text()="Partners"]';
     public static $contactsHeader = '//nav[1]//a[text()="Contacts"]';
     public static $ourServicesHeader = '//nav[1]//a[text()="Our Services"]';
+    public static $blogHeader = '//nav[1]//a[text()="Blog"]';
 // Our Services Drop-down list
     public static $devOpsHeader = '//nav[1]//a[text()="DevOps"]';
     public static $webDevHeader = '//nav[1]//a[text()="Web Development"]';
@@ -29,6 +30,7 @@ class MainPage
     public static $h3 = '//*[@class="col-md-12"]//h3';
     public static $h3MainPage = '//*[@class ="about-us-descr"]/h3';
     public static $h3def = '//h3';
+    public static $blogItems = '//*[@class = "blog-item"]';
 
 // Footer
     public static $privatePolicyFooter ='//*[@id="menu-button_menu"]//a[text()="Privacy Policy"]';
@@ -72,6 +74,8 @@ class MainPage
         $I->click(self::$partnersHeader);
         $I->waitForElement(self::$h3);
         $I->see('Partners',self::$h3);
+        $I->click(self::$blogHeader);
+        $I->waitForElement(self::$blogItems);
         $I->click(self::$contactsHeader);
         $I->waitForElement(self::$h3);
         $I->see('Contacts',self::$h3);

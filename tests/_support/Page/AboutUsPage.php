@@ -14,6 +14,10 @@ class AboutUsPage
 
 
     public static $URL = '/about-it-svit';
+    public static $homeLink = '//a[text()="Home"]';
+
+// Contacts Block
+    public static $contacts = '//*[@class = "contact-wrapper"]';
 
 // Instagram Block
     public static $followUsInstagramLink = '//*[@class="widget-area"]//a[text()="Follow Us!"]';
@@ -30,6 +34,7 @@ class AboutUsPage
     public function aboutUsInstagramBlock (){
         $I = $this->tester;
         $I->amOnPage(self::$URL);
+        $I->waitForElementVisible(self::$contacts);
         $I->scrollTo(self::$followUsInstagramLink);
         $I->click(self::$followUsInstagramLink);
         $I->executeInSelenium(function (\Facebook\WebDriver\Remote\RemoteWebDriver $webdriver) {

@@ -15,11 +15,11 @@ class ContactsPage
     public static $URL = '/contacts';
 
 // Leave a message Block
-    public static $nameField = '//*[@id="wpcf7-f163-p10-o1"]/form/p[1]/span[1]/input';
-    public static $phoneField = '//*[@id="wpcf7-f163-p10-o1"]/form/p[1]/span[2]/input';
-    public static $emailField = '//*[@id="wpcf7-f163-p10-o1"]/form/p[1]/span[3]/input';
-    public static $countryField = '//*[@id="wpcf7-f163-p10-o1"]/form/p[1]/span[4]/input';
-    public static $messageField = '//*[@id="wpcf7-f163-p10-o1"]/form/p[1]/span[5]/textarea';
+    public static $nameField = '//*[@name="your-name"]';
+    public static $phoneField = '//*[@name="your-phone"]';
+    public static $emailField = '//*[@ name="your-email"]';
+    public static $countryField = '//*[@name="your-country"]';
+    public static $messageField = '//*[@name="your-message"]';
     public static $sendButton = '//*[@id="wpcf7-f163-p10-o1"]//button';
     public static $alertMessages = '//*[@role="alert"]';
     public static $okMsgSend = '//div[2][text()="Thank you for your message. It has been sent."]';
@@ -53,7 +53,7 @@ class ContactsPage
 
     public function validLeaveAMessageData ($name,$email,$message){
         $I = $this->tester;
-       // $I->amOnPage(self::$URL);
+        $I->amOnPage(self::$URL);
         $I->scrollTo(self::$sendButton);
         $I->fillField(self::$nameField,$name);
         $I->fillField(self::$emailField,$email);

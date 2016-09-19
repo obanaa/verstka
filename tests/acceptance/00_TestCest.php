@@ -16,8 +16,7 @@ class TestCest
     }
 */
 
-/*
-   */
+/**/
     function T1HeaderLinks( \Page\MainPage $mainPage){
         $mainPage->headerLinks();  }
 
@@ -30,52 +29,28 @@ class TestCest
         $mainPage->sliderBlock();
         $mainPage->ourPartnersSlider();
         $mainPage->ourStrengthsBlock();
-        $mainPage->whatsNewBlock();
-    }
+        $mainPage->whatsNewBlock();         }
 
     function T4OurServicesPage( \Page\OurServicesPage $ourServicesPage) {
         $ourServicesPage->pageNavigation(); }
 
-    function T5AboutUsPageInstagramBlock( \Page\AboutUsPage $aboutUsPage) {
+    function T5AboutUsPage( \Page\AboutUsPage $aboutUsPage) {
         $aboutUsPage->aboutUsInstagramBlock(); }
 
-    function T6ContactsPageInvalidDataLeaveAMessageBlock( \Page\ContactsPage $contactsPage) {
+    function T6ContactsPageLeaveAMessageBlock( \Page\ContactsPage $contactsPage) {
         $contactsPage->invalidLeaveAMessageData('INVALID');
         $contactsPage->validLeaveAMessageData('Test','test@test.com','test message'); }
 
     function T7DevOpsPage( \Page\DevOpsPage $devOpsPage) {
-        $devOpsPage->devOpsFeatures(); }
+        $devOpsPage->devOpsFeatures();      }
 
+    function T8WebDevelopmentPage( \Page\WebDevPage $webDevPage){
+        $webDevPage ->webDevFeatures();     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    function T9BlogPage (\Page\BlogPage $blogPage){
+        $blogPage->pageNavigation();
+        $blogPage->checkBlocks();
+    }
 
 
 }
