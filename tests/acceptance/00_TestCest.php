@@ -25,14 +25,14 @@ class TestCest
         $mainPage->socialFooterLinks();    }
 
     function T3MainPage( \Page\MainPage $mainPage){
-        $mainPage->whoWeAreSlider();
         $mainPage->sliderBlock();
-        $mainPage->ourPartnersSlider();
+        $mainPage->whoWeAreSlider();
         $mainPage->ourStrengthsBlock();
-        $mainPage->whatsNewBlock();         }
+        $mainPage->whatsNewBlock();
+        $mainPage->ourPartnersSlider();     }
 
     function T4OurServicesPage( \Page\OurServicesPage $ourServicesPage) {
-        $ourServicesPage->pageNavigation(); }
+        $ourServicesPage->pageNavigation();     }
 
     function T5AboutUsPage( \Page\AboutUsPage $aboutUsPage) {
         $aboutUsPage->aboutUsInstagramBlock(); }
@@ -49,8 +49,18 @@ class TestCest
 
     function T9BlogPage (\Page\BlogPage $blogPage){
         $blogPage->pageNavigation();
-        $blogPage->checkBlocks();
-    }
+        $blogPage->checkBlocks();    }
+
+    function T10BigDataPage (\Page\BigDataPage $bigDataPage ){
+        $bigDataPage->bigDataFeatures();    }
+
+    function T11DocumentationPage (\Page\DocumentationPage $documentationPage ){
+        $documentationPage->documentationFeatures();    }
+
+    function T12QualityAssurancePage (\Page\QualityAssurancePage $qualityAssurancePage ){
+        $qualityAssurancePage->qualityAssurancePageFeatures();    }
+
+
 
 
 }

@@ -175,6 +175,8 @@ class MainPage
         $I->waitForElementVisible(self::$readMoreLink);
         $I->click(self::$readMoreLink);
         $I->waitForElement(self::$h3def);
+      //  $I->click(self::$logo);
+      //  $I->waitForElement(self::$nextOurPartnersSliderButton);
 
     }
 
@@ -230,7 +232,7 @@ class MainPage
     public function sliderBlock()
     {
         $I = $this->tester;
-      //  $I->amOnPage(self::$URL);
+        $I->amOnPage(self::$URL);
       //  $I->waitForElementVisible(self::$ContIntLearnMore);
         $I->click(self::$ContIntLearnMore);
         $I->waitForElement(self::$h3);
@@ -254,7 +256,7 @@ class MainPage
 
     public function whoWeAreSlider(){
         $I = $this->tester;
-        $I->amOnPage(self::$URL);
+     //   $I->amOnPage(self::$URL);
         $I->click(self::$contIntSliderButton);
         $I->waitForElementVisible(self::$assertContInt);
         $I->click(self::$devOpsSliderButton);
@@ -272,6 +274,7 @@ class MainPage
 
     public function ourPartnersSlider(){
         $I = $this->tester;
+        $I->amOnPage(self::$URL);
         $I->scrollTo(self::$nextOurPartnersSliderButton);
         $I->click(self::$nextOurPartnersSliderButton);
         $I->waitForElementVisible(self::$hoeSchoeOurPartners);
