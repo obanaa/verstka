@@ -26,7 +26,7 @@ class WebDevPage
     public static $CustomWebSolutions = '//*[@class ="item-head"]//h5[text()="Custom Web Solutions"]';
     public static $popUpCustomWebSolutions= '//*[@class ="popup-full-name"]//h5[text()="Custom Web Solutions"]';
 
-    public static $fullText = '//*[@class = "full-text"]';
+    public static $fullText = '//*[@class = "full-text"]//p';
     public static $closeButton = '//*[@title="Close (Esc)"]';
 
     public function __construct(\AcceptanceTester $I)
@@ -41,22 +41,27 @@ class WebDevPage
         $I->scrollTo(self::$CustomWebSolutions);
         $I->click(self::$magentoEcommerce);
         $I->waitForElementVisible(self::$popUpmagentoEcommerce);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$OpenCartECommerce);
         $I->click(self::$OpenCartECommerce);
         $I->waitForElementVisible(self::$popUpOpenCartECommerce);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$WordPressECommerce);
         $I->click(self::$WordPressECommerce);
         $I->waitForElementVisible(self::$popUpWordPressECommerce);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$PlugMagentoWordPressJoomla);
         $I->click(self::$PlugMagentoWordPressJoomla);
         $I->waitForElementVisible(self::$popUpPlugMagentoWordPressJoomla);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$CustomWebSolutions);
         $I->click(self::$CustomWebSolutions);
         $I->waitForElementVisible(self::$popUpCustomWebSolutions);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         }
 

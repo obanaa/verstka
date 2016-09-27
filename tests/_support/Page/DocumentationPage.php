@@ -26,7 +26,7 @@ class DocumentationPage
     public static $popUpDocumentMigration= '//*[@class ="popup-full-name"]//h5[text()="Document Migration"]';
 
 
-    public static $fullText = '//*[@class = "full-text"]';
+    public static $fullText = '//*[@class = "full-text"]//p';
     public static $closeButton = '//*[@title="Close (Esc)"]';
 
     public function __construct(\AcceptanceTester $I)
@@ -40,22 +40,27 @@ class DocumentationPage
         $I->scrollTo(self::$businessContinuityDocuments);
         $I->click(self::$businessContinuityDocuments);
         $I->waitForElementVisible(self::$popBusinessContinuityDocuments);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$userManualsGuidesFAQsReports);
         $I->click(self::$userManualsGuidesFAQsReports);
         $I->waitForElementVisible(self::$popUpUserManualsGuidesFAQsReports);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$qualityAssuranceDocuments);
         $I->click(self::$qualityAssuranceDocuments);
         $I->waitForElementVisible(self::$popQualityAssuranceDocuments);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$DocumentManagementSystems);
         $I->click(self::$DocumentManagementSystems);
         $I->waitForElementVisible(self::$popUpDocumentManagementSystems);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$documentMigration);
         $I->click(self::$documentMigration);
         $I->waitForElementVisible(self::$popUpDocumentMigration);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
     }
 

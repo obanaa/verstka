@@ -6,17 +6,13 @@ use \Step\Acceptance;
  */
 class TestCest
 {
-/*
-    function T1Links( \Page\MainPage $mainPage)
-    {
+/**/
+    function T1Links( \Page\MainPage $mainPage)    {
         $mainPage->headerLinks();
         $mainPage->footerLinks();
         $mainPage->socialFooterLinks();
-        $mainPage->whatsNewBlock();
-    }
-*/
+        $mainPage->whatsNewBlock();    }
 
-/**/
     function T1HeaderLinks( \Page\MainPage $mainPage){
         $mainPage->headerLinks();  }
 
@@ -47,21 +43,22 @@ class TestCest
     function T8WebDevelopmentPage( \Page\WebDevPage $webDevPage){
         $webDevPage ->webDevFeatures();     }
 
-    function T9BlogPage (\Page\BlogPage $blogPage){
-        $blogPage->pageNavigation();
-        $blogPage->checkBlocks();    }
+    function T9DesignPage (\Page\DesignPage $designPage ){
+        $designPage->designFeatures();    }
 
     function T10BigDataPage (\Page\BigDataPage $bigDataPage ){
         $bigDataPage->bigDataFeatures();    }
 
-    function T11DocumentationPage (\Page\DocumentationPage $documentationPage ){
-        $documentationPage->documentationFeatures();    }
-
-    function T12QualityAssurancePage (\Page\QualityAssurancePage $qualityAssurancePage ){
+    function T11QualityAssurancePage (\Page\QualityAssurancePage $qualityAssurancePage ){
         $qualityAssurancePage->qualityAssurancePageFeatures();    }
 
+    function T12DocumentationPage (\Page\DocumentationPage $documentationPage ){
+        $documentationPage->documentationFeatures();    }
 
+    function T13BlogPage (\Page\BlogPage $blogPage){
+        $blogPage->pageNavigation();
+        $blogPage->checkBlocks();    }
 
-
+/**/
 }
 

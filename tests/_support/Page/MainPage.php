@@ -20,11 +20,13 @@ class MainPage
     public static $contactsHeader = '//nav[1]//a[text()="Contacts"]';
     public static $ourServicesHeader = '//nav[1]//a[text()="Our Services"]';
     public static $blogHeader = '//nav[1]//a[text()="Blog"]';
+
 // Our Services Drop-down list
     public static $devOpsHeader = '//nav[1]//a[text()="DevOps"]';
     public static $webDevHeader = '//nav[1]//a[text()="Web Development"]';
     public static $designHeader = '//nav[1]//a[text()="Design"]';
     public static $bigDataHeader = '//nav[1]//a[text()="Big Data & Data Science"]';
+    public static $qualityAssuranceAutomation = '//nav[1]//a[text()="Quality Assurance & Automation"]';
     public static $documentationHeader = '//nav[1]//a[text()="Documentation"]';
 
     public static $h3 = '//*[@class="col-md-12"]//h3';
@@ -54,7 +56,7 @@ class MainPage
 
     public static $prevButton = '//*[@class="prev"]';
     public static $nextButton = '//*[@class="next"]';
-    public static $readMoreLink = './/*[@id="update-slider"]/div[1]/div/div[7]/div/p[2]/a';
+    public static $readMoreLink = './/*[@id="update-slider"]/div[1]/div/div[7]//a';
 
     protected $tester;
 
@@ -100,6 +102,11 @@ class MainPage
         $I->waitForElement(self::$h3);
         $I->see('Big Data & Data Science',self::$h3);
         $I->moveMouseOver(self::$ourServicesHeader);
+        $I->waitForElement(self::$qualityAssuranceAutomation);
+        $I->click(self::$qualityAssuranceAutomation);
+        $I->waitForElement(self::$h3);
+        $I->see('Quality Assurance & Automation',self::$h3);
+        $I->moveMouseOver(self::$ourServicesHeader);
         $I->waitForElementVisible(self::$documentationHeader);
         $I->click(self::$documentationHeader);
         $I->waitForElement(self::$h3);
@@ -115,7 +122,7 @@ class MainPage
     public function footerLinks()
     {
         $I = $this->tester;
-        $I->amOnPage(self::$URL);
+     //   $I->amOnPage(self::$URL);
         $I->scrollTo(self::$privatePolicyFooter);
         $I->click(self::$privatePolicyFooter);
         $I->waitForElement(self::$h3);
@@ -135,7 +142,7 @@ class MainPage
 
     public function socialFooterLinks (){
         $I = $this->tester;
-        $I->amOnPage(self::$URL);
+      //  $I->amOnPage(self::$URL);
         $I->scrollTo(self::$facebookFooter);
         $I->click(self::$facebookFooter);
         $I->seeInCurrentUrl('/IT.Svit.Team');

@@ -25,7 +25,7 @@ class BigDataPage
     public static $popUpInfrastructureBigData = '//*[@class ="popup-full-name"]//h5[text()="Infrastructure for Big Data"]';
 
 
-    public static $fullText = '//*[@class = "full-text"]';
+    public static $fullText = '//*[@class = "full-text"]//p';
     public static $closeButton = '//*[@title="Close (Esc)"]';
 
     public function __construct(\AcceptanceTester $I)
@@ -39,18 +39,22 @@ class BigDataPage
         $I->scrollTo(self::$webCrawlers);
         $I->click(self::$webCrawlers);
         $I->waitForElementVisible(self::$popWebCrawlers);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$dataProcessors);
         $I->click(self::$dataProcessors);
         $I->waitForElementVisible(self::$popUpDataProcessors);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$classifiers);
         $I->click(self::$classifiers);
         $I->waitForElementVisible(self::$popUpClassifiers);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$infrastructureBigData);
         $I->click(self::$infrastructureBigData);
         $I->waitForElementVisible(self::$popUpInfrastructureBigData);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
     }
 

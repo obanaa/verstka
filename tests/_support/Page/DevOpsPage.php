@@ -34,7 +34,7 @@ class DevOpsPage
     public static $TechSupport = '//*[@class ="item-head"]//h5[text()="Tech Support"]';
     public static $popUpTechSupport = '//*[@class ="popup-full-name"]//h5[text()="Tech Support"]';
 
-    public static $fullText = '//*[@class = "full-text"]';
+    public static $fullText = '//*[@class = "full-text"]//p';
     public static $closeButton = '//*[@title="Close (Esc)"]';
 
     public function __construct(\AcceptanceTester $I)
@@ -49,38 +49,47 @@ class DevOpsPage
         $I->scrollTo(self::$Migration);
         $I->click(self::$virtualization);
         $I->waitForElementVisible(self::$popUpVirtualization);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$CiCd);
         $I->click(self::$CiCd);
         $I->waitForElementVisible(self::$popUpCiCd);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$AWS);
         $I->click(self::$AWS);
         $I->waitForElementVisible(self::$popUpAWS);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$BigData);
         $I->click(self::$BigData);
         $I->waitForElementVisible(self::$popUpBigData);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$HostingProviders);
         $I->click(self::$HostingProviders);
         $I->waitForElementVisible(self::$popUpHostingProviders);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$Administration);
         $I->click(self::$Administration);
         $I->waitForElementVisible(self::$popUpAdministration);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$GitBasedVCSInt);
         $I->click(self::$GitBasedVCSInt);
         $I->waitForElementVisible(self::$popUpGitBasedVCSInt);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$Migration);
         $I->click(self::$Migration);
         $I->waitForElementVisible(self::$popUpMigration);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
         $I->waitForElementVisible(self::$TechSupport);
         $I->click(self::$TechSupport);
         $I->waitForElementVisible(self::$popUpTechSupport);
+        $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
 
 
