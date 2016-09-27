@@ -9,7 +9,7 @@ modules:
         WebDriver:
             url: 'http://itsvit.com'
 
-            browser: firefox
+            browser: chrome
             window_size: 1980x1780
             restart: false
 
