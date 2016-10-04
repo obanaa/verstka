@@ -6,18 +6,18 @@ use \Step\Acceptance;
  */
 class TestCest
 {
-/**/
+/*
     function T1Links( \Page\MainPage $mainPage)    {
         $mainPage->headerLinks();
         $mainPage->footerLinks();
         $mainPage->socialFooterLinks();
        // $mainPage->whatsNewBlock();
     }
+*/
 
-/*
-    function T1HeaderLinks( \Page\MainPage $mainPage){
+    function featuresOnBigDataPage ( \Page\MainPage $mainPage){
         $mainPage->headerLinks();  }
-
+/*
     function T2FooterLinks( \Page\MainPage $mainPage) {
         $mainPage->footerLinks();
         $mainPage->socialFooterLinks();    }
@@ -34,11 +34,11 @@ class TestCest
 
     function T5AboutUsPage( \Page\AboutUsPage $aboutUsPage) {
         $aboutUsPage->aboutUsInstagramBlock(); }
-
-    function T6ContactsPageLeaveAMessageBlock( \Page\ContactsPage $contactsPage) {
+*/
+    function validAndInvalidDataInLeaveAMessageBlockOnContactPage  ( \Page\ContactsPage $contactsPage) {
         $contactsPage->invalidLeaveAMessageData('INVALID');
         $contactsPage->validLeaveAMessageData('Test','test@test.com','test message'); }
-
+/*
     function T7DevOpsPage( \Page\DevOpsPage $devOpsPage) {
         $devOpsPage->devOpsFeatures();      }
 
@@ -47,10 +47,10 @@ class TestCest
 
     function T9DesignPage (\Page\DesignPage $designPage ){
         $designPage->designFeatures();    }
-
-    function T10BigDataPage (\Page\BigDataPage $bigDataPage ){
+*/
+    function headerLinks (\Page\BigDataPage $bigDataPage ){
         $bigDataPage->bigDataFeatures();    }
-
+/*
     function T11QualityAssurancePage (\Page\QualityAssurancePage $qualityAssurancePage ){
         $qualityAssurancePage->qualityAssurancePageFeatures();    }
 
