@@ -14,6 +14,10 @@ class TestCest
        // $mainPage->whatsNewBlock();
     }
 */
+    /**
+     * @tr-suite 10
+     * @tr-case 130
+     */
 
     function featuresOnBigDataPage ( \Page\MainPage $mainPage){
         $mainPage->headerLinks();  }
@@ -35,6 +39,11 @@ class TestCest
     function T5AboutUsPage( \Page\AboutUsPage $aboutUsPage) {
         $aboutUsPage->aboutUsInstagramBlock(); }
 */
+    /**
+     * @tr-suite 10
+     * @tr-case 131
+     */
+
     function validAndInvalidDataInLeaveAMessageBlockOnContactPage  ( \Page\ContactsPage $contactsPage) {
         $contactsPage->invalidLeaveAMessageData('INVALID');
         $contactsPage->validLeaveAMessageData('Test','test@test.com','test message'); }
@@ -48,6 +57,11 @@ class TestCest
     function T9DesignPage (\Page\DesignPage $designPage ){
         $designPage->designFeatures();    }
 */
+    /**
+     * @tr-suite 10
+     * @tr-case 132
+     */
+
     function headerLinks (\Page\BigDataPage $bigDataPage ){
         $bigDataPage->bigDataFeatures();    }
 /*
