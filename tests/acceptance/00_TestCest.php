@@ -19,8 +19,8 @@ class TestCest
      * @tr-case 130
      */
 
-    function featuresOnBigDataPage ( \Page\MainPage $mainPage){
-        $mainPage->headerLinks();  }
+    function featuresOnBigDataPage   (\Page\BigDataPage $bigDataPage ){
+        $bigDataPage->bigDataFeatures();    }
 /*
     function T2FooterLinks( \Page\MainPage $mainPage) {
         $mainPage->footerLinks();
@@ -62,8 +62,7 @@ class TestCest
      * @tr-case 132
      */
 
-    function headerLinks (\Page\BigDataPage $bigDataPage ){
-        $bigDataPage->bigDataFeatures();    }
+
 /*
     function T11QualityAssurancePage (\Page\QualityAssurancePage $qualityAssurancePage ){
         $qualityAssurancePage->qualityAssurancePageFeatures();    }
@@ -76,5 +75,7 @@ class TestCest
         $blogPage->checkBlocks();    }
 
 /**/
+    function headerLinks ( \Page\MainPage $mainPage){
+        $mainPage->headerLinks();  }
 }
 
