@@ -15,6 +15,27 @@ modules:
 
 env:
 
+  chrome:
+        modules:
+          config:
+            WebDriver:
+              url: 'http://itsvit.com'
+              browser: chrome
+              window_size: 1920x1080
+              host: 'hub.browserstack.com'
+              port: 80
+              capabilities:
+               browserstack.user: 'vladshalda1'
+               browserstack.key: 'vMqut6yLFsfbhDzhB643'
+               browserstack.debug: 'true'
+               unexpectedAlertBehaviour: 'accept'
+               browser: chrome
+               browser_version: 53
+               resolution: 1920x1080
+               browserstack.selenium_version: 3.0.0-beta2
+               os: WINDOWS
+               os_version: 7
+
   firefox:
     modules:
       config:
