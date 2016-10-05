@@ -38,16 +38,16 @@ class TestCest
 
     function T5AboutUsPage( \Page\AboutUsPage $aboutUsPage) {
         $aboutUsPage->aboutUsInstagramBlock(); }
-*/
+
     /**
      * @tr-suite 10
      * @tr-case 131
      */
-
+/*
     function validAndInvalidDataInLeaveAMessageBlockOnContactPage  ( \Page\ContactsPage $contactsPage) {
         $contactsPage->invalidLeaveAMessageData('INVALID');
         $contactsPage->validLeaveAMessageData('Test','test@test.com','test message'); }
-/*
+
     function T7DevOpsPage( \Page\DevOpsPage $devOpsPage) {
         $devOpsPage->devOpsFeatures();      }
 
@@ -74,8 +74,9 @@ class TestCest
         $blogPage->pageNavigation();
         $blogPage->checkBlocks();    }
 
-/**/
+/*
     function headerLinks ( \Page\MainPage $mainPage){
         $mainPage->headerLinks();  }
+*/
 }
 
