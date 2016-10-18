@@ -12,7 +12,7 @@ namespace Page;
 class DevOpsPage
 {
 
-    public static $URL = '/itsvit_our_services/devops/';
+    public static $URL = '/our-services/devops/';
 
 //Features
     public static $virtualization = '//*[@class ="item-head"]//h5[text()="Virtualization"]';

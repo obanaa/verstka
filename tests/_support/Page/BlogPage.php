@@ -24,7 +24,7 @@ class BlogPage
     public static $instagramBlock = '//h2[text()="Instagram"]';
 
 // Twitters Block
-    public static $twitterBlock = '//h2[text()="Twitters"]';
+    public static $twitterBlock = '//h2[text()="Tweets"]';
 
 // Page Navigation Block
     public static $pageNavigationBlock = '//*[@class = "wp-paginate"]';
@@ -62,17 +62,15 @@ class BlogPage
         $I->waitForElementNotVisible(self::$pageNavigation5);
     }
 
+    public static $contactsBlock = '//*[@class="contact-wrapper"]';
+
     public function checkBlocks(){
         $I = $this->tester;
         $I->amOnPage(self::$URL);
         $I->waitForElement(self::$newsSection);
         $I->click(self::$newsSection);
-        $I->seeInCurrentUrl('/?tag=news');
-        $I->waitForElement(self::$newsSection);
-        $I->waitForElement(self::$followUsBlock);
-        $I->waitForElement(self::$instagramBlock);
-        $I->waitForElement(self::$twitterBlock);
-
+        $I->seeInCurrentUrl('/category/blog/news/');
+        $I->waitForElement(self::$contactsBlock);
     }
 
 }

@@ -14,20 +14,15 @@ class TestCest
        // $mainPage->whatsNewBlock();
     }
 */
-    /**
-     * @tr-suite 10
-     * @tr-case 130
-     */
+    function T1HeaderLinks ( \Page\MainPage $mainPage){
+        $mainPage->headerLinks();  }
 
-    function featuresOnBigDataPage   (\Page\BigDataPage $bigDataPage ){
-        $bigDataPage->bigDataFeatures();    }
-/*
     function T2FooterLinks( \Page\MainPage $mainPage) {
         $mainPage->footerLinks();
         $mainPage->socialFooterLinks();    }
 
     function T3MainPage( \Page\MainPage $mainPage){
-        $mainPage->sliderBlock();
+     //   $mainPage->sliderBlock();
         $mainPage->whoWeAreSlider();
         $mainPage->ourStrengthsBlock();
         $mainPage->whatsNewBlock();
@@ -39,12 +34,7 @@ class TestCest
     function T5AboutUsPage( \Page\AboutUsPage $aboutUsPage) {
         $aboutUsPage->aboutUsInstagramBlock(); }
 
-    /**
-     * @tr-suite 10
-     * @tr-case 131
-     */
-/*
-    function validAndInvalidDataInLeaveAMessageBlockOnContactPage  ( \Page\ContactsPage $contactsPage) {
+    function T6ValidAndInvalidDataOnContactPage  ( \Page\ContactsPage $contactsPage) {
         $contactsPage->invalidLeaveAMessageData('INVALID');
         $contactsPage->validLeaveAMessageData('Test','test@test.com','test message'); }
 
@@ -56,27 +46,29 @@ class TestCest
 
     function T9DesignPage (\Page\DesignPage $designPage ){
         $designPage->designFeatures();    }
-*/
-    /**
-     * @tr-suite 10
-     * @tr-case 132
-     */
 
-
-/*
-    function T11QualityAssurancePage (\Page\QualityAssurancePage $qualityAssurancePage ){
+    function T10QualityAssurancePage (\Page\QualityAssurancePage $qualityAssurancePage ){
         $qualityAssurancePage->qualityAssurancePageFeatures();    }
 
-    function T12DocumentationPage (\Page\DocumentationPage $documentationPage ){
+    function T11DocumentationPage (\Page\DocumentationPage $documentationPage ){
         $documentationPage->documentationFeatures();    }
+
+    function T12BigDataPage   (\Page\BigDataPage $bigDataPage ){
+        $bigDataPage->bigDataFeatures();    }
 
     function T13BlogPage (\Page\BlogPage $blogPage){
         $blogPage->pageNavigation();
         $blogPage->checkBlocks();    }
 
-/*
-    function headerLinks ( \Page\MainPage $mainPage){
-        $mainPage->headerLinks();  }
-*/
+    function T14Portfolio ( \Page\PortfolioPage $portfolioPage)    {
+        $portfolioPage->portfolioTabs();
+        $portfolioPage->webDevelopmentTabs();
+        $portfolioPage->qaTabs();
+        $portfolioPage->documentationTabs();
+        $portfolioPage->devOpsTabs();
+        $portfolioPage->designTabs();
+        $portfolioPage->bigDataTabs();    }
+
+/**/
 }
 

@@ -19,6 +19,7 @@ class MainPage
     public static $partnersHeader = '//nav[1]//a[text()="Partners"]';
     public static $contactsHeader = '//nav[1]//a[text()="Contacts"]';
     public static $ourServicesHeader = '//nav[1]//a[text()="Our Services"]';
+    public static $portfolioHeader = '//nav[1]//a[text()="Portfolio"]';
     public static $blogHeader = '//nav[1]//a[text()="Blog"]';
 
 // Our Services Drop-down list
@@ -73,10 +74,12 @@ class MainPage
         $I->click(self::$aboutUsHeader);
         $I->waitForElement(self::$h3);
         $I->see('About IT Svit',self::$h3);
-        $I->click(self::$partnersHeader);
+        $I->waitAndClick(self::$portfolioHeader);
+        $I->waitForElement('.//*[@class="all tab-link current"]');
+        $I->waitAndClick(self::$partnersHeader);
         $I->waitForElement(self::$h3);
         $I->see('Partners',self::$h3);
-        $I->click(self::$blogHeader);
+        $I->waitAndClick(self::$blogHeader);
         $I->waitForElement(self::$blogItems);
         $I->waitAndClick(self::$contactsHeader);
         $I->waitForElement(self::$h3);
@@ -173,9 +176,9 @@ class MainPage
         $I->click(self::$prevButton);
         $I->click(self::$nextButton);
         $I->click(self::$nextButton);
-        $I->waitForElementVisible(self::$readMoreLink);
-        $I->click(self::$readMoreLink);
-        $I->waitForElement(self::$h3def);
+     //   $I->waitForElementVisible(self::$readMoreLink);
+    //    $I->click(self::$readMoreLink);
+    //    $I->waitForElement(self::$h3def);
       //  $I->click(self::$logo);
       //  $I->waitForElement(self::$nextOurPartnersSliderButton);
 
@@ -257,7 +260,7 @@ class MainPage
 
     public function whoWeAreSlider(){
         $I = $this->tester;
-     //   $I->amOnPage(self::$URL);
+        $I->amOnPage(self::$URL);
         $I->click(self::$contIntSliderButton);
         $I->waitForElementVisible(self::$assertContInt);
         $I->click(self::$devOpsSliderButton);
