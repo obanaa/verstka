@@ -162,7 +162,7 @@ class MainPage
         $I->amOnPage(self::$URL);
         $I->scrollTo(self::$googlePlusFooter);
         $I->click(self::$googlePlusFooter);
-        $I->seeInCurrentUrl('/+ItsvitOrg/videos');
+        $I->seeInCurrentUrl('/+ItsvitOrg/about');
        // $I->waitForElement(self::$googlePlusITsvit);
     }
 
