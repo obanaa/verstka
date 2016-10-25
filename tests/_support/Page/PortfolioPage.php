@@ -203,7 +203,7 @@ class PortfolioPage
         $I->waitAndClick(self::$bigDataDataScienceButton);
         $I->waitForElementVisible(self::$bigDataItems);
         $I->waitAndClick(self::$crawlersBigDataButton);
-        $I->waitForElementNotVisible(self::$bigDataItems);
+        $I->waitForElementVisible(self::$bigDataItems);
         $I->waitAndClick(self::$infrastructureBigDataButton);
         $I->waitForElementNotVisible(self::$bigDataItems);
         $I->waitAndClick(self::$dataProcessorsBigDataButto);

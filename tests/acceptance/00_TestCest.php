@@ -13,7 +13,7 @@ class TestCest
         $mainPage->socialFooterLinks();
        // $mainPage->whatsNewBlock();
     }
-*/
+*//**/
     function T1HeaderLinks ( \Page\MainPage $mainPage){
         $mainPage->headerLinks();  }
 

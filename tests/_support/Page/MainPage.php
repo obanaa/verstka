@@ -36,6 +36,7 @@ class MainPage
     public static $blogItems = '//*[@class = "blog-item"]';
 
 // Footer
+    public static $siteMapFooter = '//*[@id="menu-button_menu"]//a[text()="Sitemap"]';
     public static $privatePolicyFooter ='//*[@id="menu-button_menu"]//a[text()="Privacy Policy"]';
     public static $termsOfUseFooter ='//*[@id="menu-button_menu"]//a[text()="Terms of Use"]';
     public static $partnersFooter ='//*[@id="menu-button_menu"]//a[text()="Partners"]';
@@ -120,8 +121,12 @@ class MainPage
     {
         $I = $this->tester;
      //   $I->amOnPage(self::$URL);
+        $I->scrollTo(self::$siteMapFooter);
+        $I->waitAndClick(self::$siteMapFooter);
+        $I->waitForElement(self::$h3);
+        $I->see('Sitemap',self::$h3);
         $I->scrollTo(self::$privatePolicyFooter);
-        $I->click(self::$privatePolicyFooter);
+        $I->waitAndClick(self::$privatePolicyFooter);
         $I->waitForElement(self::$h3);
         $I->see('Privacy Policy',self::$h3);
         $I->scrollTo(self::$termsOfUseFooter);

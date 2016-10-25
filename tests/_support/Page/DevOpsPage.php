@@ -83,10 +83,6 @@ public static $featureBlock = '//*[@class ="page-instance"]';
         $I->waitForElementVisible(self::$popUpTechSupport);
         $I->waitForElementVisible(self::$fullText);
         $I->click(self::$closeButton);
-
-
-
-
     }
 
 }
