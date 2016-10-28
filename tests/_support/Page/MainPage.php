@@ -51,8 +51,11 @@ class MainPage
     public static $instagramITsvit = '//*[@title="itsvit"]';
     public static $linkedinFooter = '//*[@class="footer-ico"]//li[4]/a';
     public static $linkedinITsvit = '//h1/span[text()="IT Svit"]';
-    public static $googlePlusFooter = '//*[@class="footer-ico"]//li[5]/a';
+    public static $vkFooter = '//*[@class="footer-ico"]//li[5]/a';
+
+    public static $googlePlusFooter = '//*[@class="footer-ico"]//li[6]/a';
     public static $googlePlusITsvit = '//a[text()="itsvit.org"]';
+    public static $gitHubFooter = '//*[@class="footer-ico"]//li[7]/a';
 
 //  What's new Block
 
@@ -148,7 +151,7 @@ class MainPage
         $I->scrollTo(self::$facebookFooter);
         $I->click(self::$facebookFooter);
         $I->seeInCurrentUrl('/IT.Svit.Team');
-        $I->waitForElement(self::$facebookITsvit);
+       // $I->waitForElement(self::$facebookITsvit);
         $I->amOnPage(self::$URL);
         $I->scrollTo(self::$twitterFooter);
         $I->click(self::$twitterFooter);
@@ -165,9 +168,21 @@ class MainPage
         $I->seeInCurrentUrl('/company/it-svit?trk=top_nav_home');
         $I->waitForElement(self::$linkedinITsvit);
         $I->amOnPage(self::$URL);
+        $I->scrollTo(self::$vkFooter);
+        $I->waitAndClick(self::$vkFooter);
+        $I->seeInCurrentUrl('/itsvit');
+        $I->see("IT Svit", "//*[@id='page_info_wrap']/div[1]/h2");
+        $I->amOnPage(self::$URL);
         $I->scrollTo(self::$googlePlusFooter);
         $I->click(self::$googlePlusFooter);
         $I->seeInCurrentUrl('/+ItsvitOrg/about');
+        $I->amOnPage(self::$URL);
+        $I->scrollTo(self::$gitHubFooter);
+        $I->waitAndClick(self::$gitHubFooter);
+        $I->seeInCurrentUrl('/ITSvitCo');
+        $I->see("IT Svit", "//h1");
+
+
        // $I->waitForElement(self::$googlePlusITsvit);
     }
 
