@@ -31,7 +31,7 @@ class Links
     public static $URL5 = '/our-services/design/';
     public static $URL6 = '/our-services/big-data-and-data-science/';
     public static $URL7 = '/our-services/quality-assurance-and-automation/';
-    
+
     public function pageAndScreen (){
         $I = $this->tester;
         $I->amOnPage(self::$URL1);
@@ -48,6 +48,7 @@ class Links
         $I->scrollDown(1100);
         $I->amOnPage(self::$URL7);
         $I->scrollDown(1100);
+        $I->waitAndScreen(7);
         }
 
 
