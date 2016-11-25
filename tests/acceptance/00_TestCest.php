@@ -7,10 +7,9 @@ use \Step\Acceptance;
 class TestCest
 {
 
-    function T1Links( \Page\Links $links)    {
+     function T1Links( \Page\Links $links)    {
         $links->pageAndScreen();
 
-        // $mainPage->whatsNewBlock();
     }
 
 }

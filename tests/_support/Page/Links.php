@@ -6,9 +6,6 @@
  * Time: 10:56
  */
 
-#require_once('file.php');
-
-
 namespace Page;
 
 
@@ -17,41 +14,43 @@ class Links
 
 
     protected $tester;
+    protected $file;
+    protected $urls;
 
     public function __construct(\AcceptanceTester $I)
     {
         $this->tester = $I;
+        $this->file = __DIR__ . '/sitemap.xml';
+        $this->urls = [];
     }
 
-    public static $URL = '/';
-    public static $URL1 = '/blog';
-    public static $URL2 = '/about-it-svit';
-    public static $URL3 = '/our-services/devops/';
-    public static $URL4 = '/our-services/web-development/';
-    public static $URL5 = '/our-services/design/';
-    public static $URL6 = '/our-services/big-data-and-data-science/';
-    public static $URL7 = '/our-services/quality-assurance-and-automation/';
-
-    public function pageAndScreen (){
+    public function pageAndScreen ()
+    {
+        $this->urls = $this->getListUrl();
         $I = $this->tester;
-        $I->amOnPage(self::$URL1);
-        $I->scrollDown(1100);
-        $I->amOnPage(self::$URL2);
-        $I->scrollDown(1100);
-        $I->amOnPage(self::$URL3);
-        $I->scrollDown(1100);
-        $I->amOnPage(self::$URL4);
-        $I->scrollDown(1100);
-        $I->amOnPage(self::$URL5);
-        $I->scrollDown(1100);
-        $I->amOnPage(self::$URL6);
-        $I->scrollDown(1100);
-        $I->amOnPage(self::$URL7);
-        $I->scrollDown(1100);
-        $I->waitAndScreen(7);
+        $number =1;
+        foreach($this->urls as $url){
+            $I->amOnUrl($url);
+            $I->scrollDown(1100);
+          #  $I->seeInCurrentUrl($url);
+            $link = parse_url($url);
+            $uri =  preg_replace( '/\//', '_' ,$link['path']);
+            $I->makeScreenshot('itsit_' . $uri. '_' .$number . '.png');
+            $number++;
         }
+    }
 
+    private function getListUrl()
+    {
+        $xml = simplexml_load_file($this->file);
+        foreach ($xml as $page) {
+            $this->urls[] = (string) $page->loc;
+        }
+        return $this->urls;
+    }
 
 
 
 }
+
+

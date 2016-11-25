@@ -7,7 +7,7 @@ modules:
 
     config:
         WebDriver:
-            url: 'http://itsvit.com'
+            url:
 
             browser: chrome
             window_size: 1980x1780
@@ -19,7 +19,7 @@ env:
         modules:
           config:
             WebDriver:
-              url: 'http://itsvit.com'
+              url: ''
               browser: chrome
               window_size: 1920x1080
               host: 'hub.browserstack.com'
